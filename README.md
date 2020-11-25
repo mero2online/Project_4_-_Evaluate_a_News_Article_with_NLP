@@ -51,6 +51,12 @@ API_KEY=**************************
 ```
 npm start
 ```
+3- Unit Testing using Jest Framework
+[Jest](https://jestjs.io/en/) is a framework for testing JavaScript projects. We are interested in the unit-testing of our project. The Jest framework provides us the ability to create, and run unit tests. In general, unit testing means to test the functionality of each unit/component of a project. But, in our case, we will write tests for desired functions defined in the src/client/js directory. The tests will check if the functions are behaving expectedly when provided an input. Let's learn to add Jest to your project to handle unit-testing.
+```
+// To run test
+npm run test
+```
 ### License
 
 Evaluate a News Article with Natural Language Processing App Project is Copyright © 2020 Udaciy.
