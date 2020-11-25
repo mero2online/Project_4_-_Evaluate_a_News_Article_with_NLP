@@ -19,13 +19,13 @@ function checkForURL(inputURL) {
   if (validURL(inputURL)) {
     validityAlert.insertAdjacentHTML(
       'afterbegin',
-      '<div class="validityAlert-message">URL is valid</div>'
+      '<div class="validityAlert-message valid-url">URL is valid</div>'
     );
     return true;
   }
   validityAlert.insertAdjacentHTML(
     'afterbegin',
-    '<div class="validityAlert-message">URL is not valid!</div>'
+    '<div class="validityAlert-message not-vaild-url">URL is not valid!</div>'
   );
   return false;
 }
