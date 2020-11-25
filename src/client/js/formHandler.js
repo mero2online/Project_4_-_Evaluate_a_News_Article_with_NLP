@@ -17,12 +17,11 @@ function handleSubmit(event) {
         .then((res) => res.json())
         .then(function (res) {
           console.log(res);
-          document.getElementById('results').innerHTML = `
-          Agreement: ${res.agreement}
-          Confidence: ${res.confidence}
-          Irony: ${res.irony}
-          Model: ${res.model}
-          Subjectivity: ${res.subjectivity}`;
+          document.getElementById('agreement-result').innerHTML = `Agreement: ${res.agreement}`
+          document.getElementById('confidence-result').innerHTML = `Confidence: ${res.confidence}`
+          document.getElementById('irony-result').innerHTML = `Irony: ${res.irony}`
+          document.getElementById('model-result').innerHTML = `Model: ${res.model}`
+          document.getElementById('subjectivity-result').innerHTML = `Subjectivity: ${res.subjectivity}`;
         });
     });
 }
