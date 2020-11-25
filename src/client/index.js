@@ -13,3 +13,18 @@ console.log(checkForURL);
 // console.log('CHANGE!!');
 
 export { checkForURL, handleSubmit };
+
+var coll = document.getElementsByClassName('collapsible');
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener('click', function () {
+    this.classList.toggle('active');
+    var all_result = this.nextElementSibling;
+    if (all_result.style.display === 'block') {
+      all_result.style.display = 'none';
+    } else {
+      all_result.style.display = 'block';
+    }
+  });
+}
