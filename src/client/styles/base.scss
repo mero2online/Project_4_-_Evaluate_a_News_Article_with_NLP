@@ -2,10 +2,17 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  background-image: radial-gradient(#ff8a00, #e52e71);
 }
 
 main {
   flex: 2;
+  section {
+    h1 {
+      text-align: center;
+      font-size: 3vw;
+    }
+  }
 }
 
 section {
@@ -16,19 +23,32 @@ section {
 section {
   div {
     margin: 10px;
-
-    div {
-      font-size: 1em;
-      padding: 20px;
-      margin: 10px;
-    }
   }
 }
 
+.validityAlert {
+  display: flex;
+  justify-content: center;
+  margin: 0px;
+}
+
+%validityStyles-shared {
+  width: fit-content;
+  font-size: 1.5em;
+  padding: 10px;
+  text-align: center;
+}
+
 .valid-url {
-  background-color: #008000;
+  @extend %validityStyles-shared;
+  background-color: #30b8a6;
 }
 
 .not-vaild-url {
-  background-color: #ff0000;
+  @extend %validityStyles-shared;
+  background-color: #f81803;
+}
+
+.results {
+  font-weight: bold;
 }

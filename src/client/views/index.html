@@ -20,18 +20,18 @@
     <main>
         <section>
             <h1>Evaluate a News Article with NLP</h1>
-            <div class="validityAlert"></div>
         </section>
 
         <section>
             <form class="" onsubmit="return Client.handleSubmit(event)">
+                <div class="validityAlert"></div>
                 <input id="url-input" type="text" name="input" value="" placeholder="URL">
-                <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)"
+                <input type="submit" name="" value="Submit" onclick="return Client.handleSubmit(event)"
                     onsubmit="return handleSubmit(event)">
             </form>
             <section>
 
-                <section>
+                <section class="results">
                     <strong>Form Results:</strong>
                     <div id="agreement-result"></div>
                     <div id="confidence-result"></div>
