@@ -5,11 +5,25 @@ function handleSubmit(event) {
   let formText = document.getElementById('name').value;
   Client.checkForName(formText);
 
-  console.log('::: Form Submitted :::');
-  fetch('http://localhost:8081/test')
-    .then((res) => res.json())
-    .then(function (res) {
-      document.getElementById('results').innerHTML = res.message;
+  fetch('/api')
+    .then((data) => data.json())
+    .then(function (data) {
+      console.log(data);
+      let apiKey = data.apiKey;
+      // Base URL for MeaningCloud API
+      let baseURL = `https://api.meaningcloud.com/sentiment-2.1?key=${apiKey}&url=${formText}&lang=en`;
+      console.log('::: Form Submitted :::');
+      fetch(baseURL)
+        .then((res) => res.json())
+        .then(function (res) {
+          console.log(res);
+          document.getElementById('results').innerHTML = `
+          Agreement: ${res.agreement}
+          Confidence: ${res.confidence}
+          Irony: ${res.irony}
+          Model: ${res.model}
+          Subjectivity: ${res.subjectivity}`;
+        });
     });
 }
 
