@@ -57,6 +57,15 @@ npm start
 // To run test
 npm run test
 ```
+4- Service Workers
+We add Work box Plugin from Google to make the site available offline when you stop your local server.
+
+## Deployment
+I have deploy this project to be live on [Netlify](https://www.netlify.com/)
+To access it live [Click Here](https://evaluate-news-article-with-nlp.netlify.app/)
+
+#### Issue
+I got issue with deploy the project on Netlify because ```.env``` file not included in the project but I still working on this issue to solve it.
 ### License
 
 Evaluate a News Article with Natural Language Processing App Project is Copyright © 2020 Udaciy.
