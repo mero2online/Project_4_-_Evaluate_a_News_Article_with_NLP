@@ -3,15 +3,41 @@ function handleSubmit(event) {
 
   // check what text was put into the form field
   let inputURL = document.getElementById('url-input').value;
-  Client.checkForURL(inputURL);
 
+  let validityAlert = document.querySelector('.validityAlert');
+  let validityAlert_message = document.querySelector('.validityAlert-message');
+  // check if alert message exist to remove it
+  if (
+    typeof validityAlert_message != 'undefined' &&
+    validityAlert_message != null
+  ) {
+    validityAlert_message.remove();
+  }
+  // check if inputURL vaild print message and if not vaild print another message
+  if (Client.checkForURL(inputURL)) {
+    validityAlert.insertAdjacentHTML(
+      'afterbegin',
+      '<div class="validityAlert-message valid-url">URL is valid</div>'
+    );
+  } else {
+    validityAlert.insertAdjacentHTML(
+      'afterbegin',
+      '<div class="validityAlert-message not-vaild-url">URL is not valid!</div>'
+    );
+  }
+
+  console.log('::: Form Submitted :::');
+  
+  // fetch api key from server to make API call
   fetch('/api')
     .then((data) => data.json())
     .then(function (data) {
       let apiKey = data.apiKey;
+
       // Base URL for MeaningCloud API
       let baseURL = `https://api.meaningcloud.com/sentiment-2.1?key=${apiKey}&url=${inputURL}&lang=en`;
-      console.log('::: Form Submitted :::');
+
+      // fetch data from MeaningCloud API and print it to html file
       fetch(baseURL)
         .then((res) => res.json())
         .then(function (res) {
@@ -28,4 +54,6 @@ function handleSubmit(event) {
     });
 }
 
-export { handleSubmit };
+export {
+  handleSubmit
+};
