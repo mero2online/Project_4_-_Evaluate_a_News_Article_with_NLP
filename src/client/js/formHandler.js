@@ -43,13 +43,14 @@ function handleSubmit(event) {
         .then(function (res) {
           console.log(res);
           var allData = JSON.stringify(res);
-          document.getElementById('agreement-result').innerHTML = `Agreement: ${res.agreement}`
-          document.getElementById('confidence-result').innerHTML = `Confidence: ${res.confidence}`
-          document.getElementById('irony-result').innerHTML = `Irony: ${res.irony}`
-          document.getElementById('model-result').innerHTML = `Model: ${res.model}`
-          document.getElementById('subjectivity-result').innerHTML = `Subjectivity: ${res.subjectivity}`;
-          document.getElementById('score-tag-result').innerHTML = `Score Tag: ${res.score_tag}`;
-          document.getElementById('all-result').innerHTML = `All info: ${allData}`;
+          document.getElementById('agreement-result').innerHTML = `<td>Agreement:</td><td>${res.agreement}</td>`
+          document.getElementById('confidence-result').innerHTML = `<td>Confidence:</td><td>${res.confidence}</td>`
+          document.getElementById('irony-result').innerHTML = `<td>Irony:</td><td>${res.irony}</td>`
+          document.getElementById('model-result').innerHTML = `<td>Model:</td><td>${res.model}</td>`
+          document.getElementById('subjectivity-result').innerHTML = `<td>Subjectivity:</td><td>${res.subjectivity}</td>`;
+          document.getElementById('score-tag-result').innerHTML = `<td>Score Tag:</td><td>${res.score_tag}</td>`;
+          document.getElementById('all-result').innerHTML = `<td>All info:</td><td>${allData}</td>`;
+          document.querySelector('.collapsible').style.visibility = 'visible';
         });
     });
 }
