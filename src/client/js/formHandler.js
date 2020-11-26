@@ -13,6 +13,9 @@ function handleSubmit(event) {
   ) {
     validityAlert_message.remove();
   }
+
+  console.log('::: Form Submitted :::');
+  
   // check if inputURL vaild print message and if not vaild print another message
   if (Client.checkForURL(inputURL)) {
     validityAlert.insertAdjacentHTML(
@@ -25,9 +28,6 @@ function handleSubmit(event) {
       '<div class="validityAlert-message not-vaild-url">URL is not valid!</div>'
     );
   }
-
-  console.log('::: Form Submitted :::');
-  
   // fetch api key from server to make API call
   fetch('/api')
     .then((data) => data.json())
