@@ -20,7 +20,6 @@ app.use(cors());
 
 const dotenv = require('dotenv');
 dotenv.config();
-console.log(`Your API key is ${process.env.API_KEY}`);
 
 // Personal API Key for MeaningCloud API
 const apiKey = process.env.API_KEY;
@@ -43,12 +42,12 @@ app.get('/test', function (req, res) {
   res.send(mockAPIResponse);
 });
 
-const apiKeyData = {
-  apiKey: apiKey,
-};
+// const apiKeyData = {
+//   apiKey: apiKey,
+// };
 
-app.get('/api', getApiKeyData);
+// app.get('/api', getApiKeyData);
 
-function getApiKeyData(req, res) {
-  res.send(apiKeyData);
-}
+// function getApiKeyData(req, res) {
+//   res.send(apiKeyData);
+// }

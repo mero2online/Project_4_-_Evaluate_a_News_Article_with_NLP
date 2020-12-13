@@ -29,10 +29,10 @@ function handleSubmit(event) {
     );
   }
   // fetch api key from server to make API call
-  fetch('/api')
-    .then((data) => data.json())
-    .then(function (data) {
-      let apiKey = data.apiKey;
+  // fetch('/api')
+  //   .then((data) => data.json())
+  //   .then(function (data) {
+      let apiKey = process.env.API_KEY;
 
       // Base URL for MeaningCloud API
       let baseURL = `https://api.meaningcloud.com/sentiment-2.1?key=${apiKey}&url=${inputURL}&lang=en`;
@@ -52,7 +52,7 @@ function handleSubmit(event) {
           document.getElementById('all-result').innerHTML = `<td>All info:</td><td>${allData}</td>`;
           document.querySelector('.collapsible').style.visibility = 'visible';
         });
-    });
+    // });
 }
 
 export {
