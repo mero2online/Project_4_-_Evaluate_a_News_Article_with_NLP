@@ -32,7 +32,7 @@ app.get('/', function (req, res) {
   res.sendFile('dist/index.html');
   // res.sendFile(path.resolve('src/client/views/index.html'))
 });
-const port = 8081;
+const port = process.env.PORT;
 // designates what port the app will listen to for incoming requests
 app.listen(port, function () {
   console.log(`Example app listening on port ${port}!`, `http://localhost:${port}/`);
