@@ -32,7 +32,7 @@ function handleSubmit(event) {
   // fetch('/api')
   //   .then((data) => data.json())
   //   .then(function (data) {
-      let apiKey = process.env.API_KEY;
+      let apiKey = '33cbdafdbb6906cb9f0a61b75cbaa159';
 
       // Base URL for MeaningCloud API
       let baseURL = `https://api.meaningcloud.com/sentiment-2.1?key=${apiKey}&url=${inputURL}&lang=en`;
