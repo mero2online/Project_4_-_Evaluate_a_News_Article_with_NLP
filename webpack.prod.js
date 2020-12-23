@@ -5,6 +5,8 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
+const dotenv = require('dotenv');
+dotenv.config();
 // const WorkboxPlugin = require('workbox-webpack-plugin');
 
 module.exports = {
