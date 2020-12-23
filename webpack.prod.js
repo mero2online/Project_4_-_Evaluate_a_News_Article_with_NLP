@@ -37,6 +37,8 @@ module.exports = {
     }),
     new MiniCssExtractPlugin({ filename: '[name].css' }),
     // new WorkboxPlugin.GenerateSW(),
-    new Dotenv(),
+    new Dotenv({
+      systemvars: true,
+    }),
   ],
 };
